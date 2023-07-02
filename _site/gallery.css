@@ -1,0 +1,146 @@
+/*-- -------------------------- -->
+<---          Gallery           -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    :root {
+      /* remove this whole :root and put in your global css file that's shared on all pages, then just remove this section from all other Stitches you add later, only need this once in your global stylesheet */
+      --primary: #AC8856;
+      --primaryLight: #4da3fc;
+      --secondary: #FFBA43;
+      --secondaryLight: #FFBA43;
+      --headerColor: #1a1a1a;
+      --bodyTextColor: #4E4B66;
+      --bodyTextColorWhite: #FAFBFC;
+      /* 13px - 16px */
+      --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
+      /* 31px - 49px */
+      --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
+      --bodyFontSize: 1rem;
+      /* 60px - 100px top and bottom */
+      --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+    }
+    #gallery-973 {
+      /* remove the font family so the Stitch inherits the fonts from your global stylesheet */
+      font-family: 'Roboto', 'Arial', sans-serif;
+      padding: var(--sectionPadding);
+      background-color: #ffebcf;
+    }
+    #gallery-973 .cs-container {
+      width: 100%;
+      /* changes to 1280px at small desktop */
+      max-width: 34.375rem;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* 48px - 64px */
+      gap: clamp(3rem, 6vw, 4rem);
+    }
+    #gallery-973 .cs-content {
+      /* set text align to left if content needs to be left aligned */
+      text-align: center;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      /* centers content horizontally, set to flex-start to left align */
+      align-items: center;
+      padding-top: 3rem;
+    }
+    #gallery-973 .cs-topper {
+      font-size: var(--topperFontSize);
+      line-height: 1.2em;
+      text-transform: uppercase;
+      text-align: inherit;
+      letter-spacing: .1em;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.25rem;
+      display: block;
+    }
+    #gallery-973 .cs-title {
+      font-size: var(--headerFontSize);
+      font-weight: 900;
+      line-height: 1.2em;
+      text-align: inherit;
+      max-width: 43.75rem;
+      margin: 0 0 1rem 0;
+      color: var(--headerColor);
+      position: relative;
+    }
+    #gallery-973 .cs-text {
+      font-size: var(--bodyFontSize);
+      line-height: 1.5em;
+      text-align: inherit;
+      width: 100%;
+      max-width: 40.625rem;
+      margin: 0;
+      color: rgb(72, 70, 70);
+    }
+    #gallery-973 .cs-title {
+      /* Override.  cs-topper cs-title and first cs-text should be removed and put into your global css sheet so it can control every instance of them on your site and is consistent. This selector is a section specific override that stays inside this stitch */
+      max-width: 20ch;
+    }
+    #gallery-973 .cs-gallery {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    #gallery-973 .cs-image {
+      width: 50%;
+      aspect-ratio: 1;
+      /* clips the image corners */
+      overflow: hidden;
+      display: block;
+      position: relative;
+    }
+    #gallery-973 .cs-image img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      /* makes it act like a background image */
+      object-fit: cover;
+    }
+  }
+  /* Small Desktop - 1024px */
+  @media only screen and (min-width: 64rem) {
+
+    #gallery-973 .cs-container {
+      max-width: 80rem;
+      margin-top: -5rem;
+      margin-bottom: -1rem;
+    }
+    #gallery-973 .cs-image {
+      width: 25%;
+      height: 25rem;
+    }
+    .custom-shape-divider-top-1688243536 {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        overflow: hidden !important;
+        line-height: 0 !important;
+    }
+    
+    .custom-shape-divider-top-1688243536 svg {
+        position: relative !important;
+        display: block !important;
+        width: calc(129% + 1.3px) !important;
+        height: 123px !important;
+    }
+    
+    .custom-shape-divider-top-1688243536 .shape-fill {
+        fill: #272015 !important;
+    }
+    
+
+  }
+                                  

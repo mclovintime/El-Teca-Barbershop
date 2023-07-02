@@ -1,0 +1,54 @@
+.splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to right, #ff4500, #ffd700, #800020);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: top 0.5s ease-out; /* The slide-up transition */
+}
+
+.splash-screen.hide {
+    top: -100%; /* Slide up off the screen */
+}
+
+.splash-image {
+    position: relative;
+    z-index: 2; /* This ensures the image is on top of the SVG */
+    width: 60em; /* Adjust as needed */
+    height: 30em; /* Adjust as needed */
+    animation: fade-in 1s ease-out;
+}
+
+/* CSS for mobile devices */
+@media (max-width: 768px) {
+    .splash-image {
+        width: 50em; /* Adjust as needed */
+        height: 25em; /* Adjust as needed */
+    }
+
+    .splash-screen{
+        background: linear-gradient(to right, #ff4500,  #800020);
+    }
+
+}
+
+
+svg {
+    position: absolute;
+    bottom: 0;
+    width: 100%; /* Ensure the SVG spans the whole width */
+    height: 20vh; /* Adjust the SVG height as necessary */
+    z-index: 1; /* This places the SVG below the logo */
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
