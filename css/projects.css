@@ -8,6 +8,7 @@
     padding-bottom: 35%;
     position: relative;
     z-index: 5;
+    background: linear-gradient(#f0e19e, #fbaa1a);
   }
   #portfolio .container {
     width: 96%;
@@ -90,6 +91,7 @@
     -o-object-fit: cover;
        object-fit: cover;
     border-radius: 0.5em;
+    box-shadow: 5px 5px 20px 5px rgba(68,68,68,0.4);
   }
 }
 /* Small Desktop */

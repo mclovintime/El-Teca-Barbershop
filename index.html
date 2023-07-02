@@ -32,10 +32,17 @@
     <link rel="preload" as="image" href="/images/landing-m.webp">
     <link rel="preload" as="font" type="font/woff2" href="fonts/roboto-v29-latin-regular.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="fonts/roboto-v29-latin-700.woff2" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="gallery.css">
+
 
     <link rel="stylesheet" href="/css/critical.css"> <!-- Only above the fold css-->
     <link rel="stylesheet" href="/css/root.css">
     <link rel="stylesheet" href="/css/dark.css">
+    <link rel="stylesheet" href="/pricing.css">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/landing.css">
 
     <!--Defer loading the whole page css-->
     <link rel="stylesheet" href="/css/local.css" media="print" onload="this.media='all'; this.onload=null;">
@@ -66,29 +73,56 @@
             <!--Logo - Get SVGs if you can.  I use fiverr to get png's turned into SVGs. Highly recommend it, worth the $20 - get a light and dark version-->
             <a class="logo" aria-label="click to go to home page" href="/index.html">
                 <!--Light Colored Logo, remove .dark image tag and the .light class if you don't have a dark and light version -->
-                <img class="light" aria-hidden="true" src="/images/logo-light.png" decoding="async" alt="logo" width="221" height="66">
+                <img class="light" aria-hidden="true" src="/newimg/teca-logo-white.png" decoding="async" alt="logo" width="221" height="66">
 
                 <!--Dark Colored Logo-->
-                <img class="dark" aria-hidden="true" src="/images/logo-blue.png" decoding="async" loading="lazy" alt="logo" width="221" height="66">
+                <img class="dark" aria-hidden="true" src="/newimg/teca-logo-dark.png" decoding="async" loading="lazy" alt="logo" width="221" height="66">
             </a>
+
+            <!--TESTING SPLASH SCREEN-->
+            <script src="splash.js"></script>
+
+            <div id="splashScreen" class="splash-screen">
+                <div class="logo-container">
+                    <img id="logo" class="splash-image" src="newimg/large color logo.png" alt="Logo" />
+                </div>
+                <div class="svg-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                        <defs>
+                            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%"   style="stop-color: #ff4500;"/>
+                                <stop offset="50%"  style="stop-color: #ffd700;"/>
+                                <stop offset="100%" style="stop-color: #800020;"/>
+                            </linearGradient>
+                        </defs>
+                        <path id="thesvg" fill="red" fill-opacity="1" d="M0,256L60,234.7C120,213,240,171,360,170.7C480,171,600,213,720,229.3C840,245,960,235,1080,208C1200,181,1320,139,1380,117.3L1440,96L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
+                    </svg>
+                </div>
+            </div>
+            
+            
+            
+            
+
+            
 
             <!--Main Nav-->
             <nav id="navbar-menu">
                 <ul>
                     <li><a class="active" href="/index.html">Home</a></li>
-                    <li><a href="/about.html">About Us</a></li>
-                    <li><a href="/projects.html">Projects</a></li>
-                    <li><a href="/reviews.html">Reviews</a></li>
-                    <li><a href="/contact.html">Contact</a></li>
+                    <li><a >About Us</a></li>
+                    <!-- href="/about.html" -->
+                    <li><a >Gallery</a></li>
+                    <!-- href="/projects.html" -->
+                    <li><a>Reviews</a></li>
+                    <!-- href="/reviews.html" -->
+                    <li><a >Contact</a></li>
+                    <!-- href="/contact.html" -->
                 </ul>
             </nav>
 
             <!--Dark Mode toggle-->
-            <button id="dark-mode-toggle">
-                <!--Moon is an inline SVG so you can edit the color if needed-->
-                <svg class="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" style="enable-background:new 0 0 480 480" xml:space="preserve"><path d="M459.782 347.328c-4.288-5.28-11.488-7.232-17.824-4.96-17.76 6.368-37.024 9.632-57.312 9.632-97.056 0-176-78.976-176-176 0-58.4 28.832-112.768 77.12-145.472 5.472-3.712 8.096-10.4 6.624-16.832S285.638 2.4 279.078 1.44C271.59.352 264.134 0 256.646 0c-132.352 0-240 107.648-240 240s107.648 240 240 240c84 0 160.416-42.688 204.352-114.176 3.552-5.792 3.04-13.184-1.216-18.496z"/></svg>
-                <img class="sun" aria-hidden="true" src="/images/sun.svg" decoding="async" alt="moon" width="15" height="15">
-            </button>
+            
 
             <!--Mobile Nav toggle-->
             <button class="hamburger-menu">
@@ -102,59 +136,67 @@
         <!--                    LANDING                   -->
         <!-- ============================================ -->
     
-        <section id="hero">
-            <div class="hero-content">
-                <div class="heroText">
-                    <h1 id="home-h">Main Keywords of What They Do, And Location If Needed</h1>
-                    <p>
-                        Talk about the other services they do with keywords and locations where they serve.  Try to make this 2-3 lines tall.
-                    </p>
-                    <a class="button-solid" href="/contact.html" target="_blank" rel="noopener">
-                        Main Call To Action
-                    </a>
+        <!--We needed to pull from Google Fonts CDN to load in the cursive font. -->
+<!--Download the fonts from https://gwfh.mranftl.com/fonts and follow the steps to host it locally and remove these CDN links-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap" rel="stylesheet">
+
+<!-- ============================================ -->
+<!--                   Stats                      -->
+<!-- ============================================ -->
+
+<section id="hero-929">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">Undisputed home of the best fades in town</h2>
+            <div class="cs-flex">
+                <div class="cs-content-group">
+                    <!-- <p class="cs-text">
+                        Designed to maintain your current colour, blend out a growing root or balance your blonde while providing full and semi-permanent coverage.
+                    </p> -->
+                    <a href="https://square.site/book/1XVETMPTDETR9/el-teca-barbershop-big-lake-mn" class="cs-button-solid">Book An Appointment</a>
+                </div>
+                <div class="cs-hours-group">
+                    <span class="cs-header">Business Hours</span>
+                    <div class="cs-hours">
+                        <span class="cs-day">Mon-Thu</span>
+                        <span class="cs-time">10AM - 6PM</span>
+                    </div>
+                    <div class="cs-hours">
+                        <span class="cs-day">Fri-Sat</span>
+                        <span class="cs-time">10AM - 8PM</span>
+                    </div>
+                    <div class="cs-hours">
+                        <span class="cs-day">Sun</span>
+                        <span class="cs-time">9AM - 4PM</span>
+                    </div>
                 </div>
             </div>
-            <picture>
-                <source media="(max-width: 600px)" srcset="/images/landing-m.webp">
-                <source media="(min-width: 601px)" srcset="/images/landing.jpg">
-                <img aria-hidden="true" decoding="async" src="/images/landing.jpg" alt="new home" width="275" height="132">
-             </picture>
-        </section>
-
-        <!-- ============================================ -->
-        <!--                  Services                    -->
-        <!-- ============================================ -->
-
-        <section id="services" class="services">
-            <!-- Get Icons From flaticon.com -->
-            <div class="card">
-                <picture>
-                    <img aria-hidden="true" decoding="async" src="/images/service1.svg" alt="appliance" width="48" height="48">
+            <!--We need this wrapper div so we can place the cs-tagline around the cs-picture image. We can only place images inside picture tags so the cs-tagline can't go in there. hence we HAVE to make a div wrapper so they can be placed together-->
+            <div class="cs-picture-group">
+                <span class="cs-tagline">Since 2016</span>
+                <!--Hair Model Picture-->
+                <picture id="splashman" class="cs-picture">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" src="/newimg/theman-png-cropped.png">
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" src="/newimg/theman-png-cropped.png">
+                    <img loading="lazy" decoding="async" src="/newimg/theman-png-cropped.png" alt="hair model" width="576" height="598">
                 </picture>
-                <h2>Service 1</h2>
-                <p>
-                    Talk about the service with keywords people will be searching for it by. Keep it 1-2 sentences.
-                </p>
             </div>
-            <div class="card">
-                <picture>
-                    <img aria-hidden="true" decoding="async" src="/images/service2.svg" alt="appliance" width="48" height="48">
-                </picture>
-                <h2>Service 2</h2>
-                <p>
-                    Talk about the service with keywords people will be searching for it by. Keep it 1-2 sentences.
-                </p>
-            </div>
-            <div class="card">
-                <picture>
-                    <img aria-hidden="true" decoding="async" src="/images/service3.svg" alt="appliance" width="48" height="48">
-                </picture>
-                <h2>Service 3</h2>
-                <p>
-                    Talk about the service with keywords people will be searching for it by. Keep it 1-2 sentences.
-                </p>
-            </div>
-        </section>
+        </div>
+    </div>
+    <picture class="cs-background">
+        <!--Mobile Image-->
+        <source media="(max-width: 600px)" src="/newimg/full-shop-w-logo.jpg">
+        <!--Tablet and above Image-->
+        <source media="(min-width: 601px)" src="/newimg/full-shop-w-logo.jpg">
+        <img loading="lazy" decoding="async" src="/newimg/full-shop-w-logo.jpg" alt="salon interior" width="1920" height="804">
+    </picture>
+</section>
+                                
 
         <!-- ============================================ -->
         <!--                   About                      -->
@@ -163,96 +205,242 @@
         <section id="sidebyside" class="sidebyside">
             <div class="container">
                 <div class="content">
-                    <h2 class="title">Trusted home builders for (main city) for over 20 years</h2>
+                    <h2 id="exceptionalheader" class="title">Looking for an exceptional barbershop experience?</h2>
                      <p>
-                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam debitis dolor consectetur dolorem inventore modi tenetur ex odit, amet beatae ad, doloribus tempora quae ab nulla minus temporibus at veritatis!
+                        Welcome to El Teca Barbershop! Your passport to the realm of impeccable style and the home to the finest fades in town.
                      </p>
                      <p>
-                         <strong>A list if you need it:</strong>
+                         <strong>Our Expert Services:</strong>
                       </p>
                      <ul>
                         <li>
                             <img aria-hidden="true" loading="lazy" decoding="async" src="/images/check.svg" alt="check mark" width="20" height="20">
-                            <span>List item about something, this one is going to two lines so you can see what it looks like</span>
+                            <span>Gray Coverage and Premium Beard Trims</span>
                         </li>
                         <li>
                             <img aria-hidden="true" loading="lazy" decoding="async" src="/images/check.svg" alt="check mark" width="20" height="20">
-                            <span>List item about something</span>
+                            <span>Detailed Brow Waxing and Blade Shaping</span>
                         </li>
                         <li>
                             <img aria-hidden="true" loading="lazy" decoding="async" src="/images/check.svg" alt="check mark" width="20" height="20">
-                            <span>List item about something</span>
+                            <span>Distinctive Hair Tattoos</span>
                         </li>
                         <li>
                             <img aria-hidden="true" loading="lazy" decoding="async" src="/images/check.svg" alt="check mark" width="20" height="20">
-                            <span>List item about something</span>
+                            <span>Hydrating and Exfoliating Facials</span>
                         </li>
                         <li>
                             <img aria-hidden="true" loading="lazy" decoding="async" src="/images/check.svg" alt="check mark" width="20" height="20">
-                            <span>List item about something</span>
+                            <span>Personalized Styling Consultation</span>
                         </li>
                     </ul>
                      <p>
-                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium saepe laborum nam consequuntur porro inventore odio? Quod autem alias ratione cum reiciendis qui quaerat, sequi voluptatum voluptatibus, iusto itaque sed ullam. Quis, maiores corrupti. Rerum quo laudantium vero magnam tempora!
+                         Discover the El Teca experience today! We can't wait to show you what we're capable of. With our unwavering commitment to quality craftsmanship, meticulous attention to detail, and resolute dedication to your satisfaction, we guarantee a look you'll love. At El Teca, every cut is a work of art and every client becomes a testament to our love for this craft.
                      </p>
-                     <a class="button-solid" href="/about.html">More About Us</a>
+                     <div id="button-wrapper">
+                     <a id="under-main"  class="button-solid" href="/about.html">Learn More About Us</a>
+                    </div>
                 </div>
-                <picture class="image-box">
-                     <source media="(max-width: 600px)" srcset="/images/cabinets2-m.jpg">
-                     <source media="(min-width: 601px)" srcset="/images/cabinets2.jpg">
-                     <img aria-hidden="true" loading="lazy" decoding="async" src="/images/cabinets2.jpg" alt="cabinets" width="400" height="662">
+                <picture id="profile"class="image-box">
+                     <source media="(max-width: 600px)" srcset="newimg/the man himself.jpg">
+                     <source media="(min-width: 601px)" srcset="newimg/the man himself.jpg">
+                     <img aria-hidden="true" loading="lazy" decoding="async" src="newimg/the man himself.jpg" alt="El Teca's finest barber" width="400" height="662">
                  </picture>
             </div>
-       </section>
-
+        </section>
+        
         <!-- ============================================ -->
-        <!--          Extra Content For Ranking           -->
-        <!-- ============================================ -->
+<!--                   Gallery                    -->
+<!-- ============================================ -->
 
-        <section id="sidebyside-reverse">
-            <div class="container">
-                <div class="content">
-                    <h2 class="title">Extra content, maybe talk about a main service</h2>
-                     <p>
-                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam debitis dolor consectetur dolorem inventore modi tenetur ex odit, amet beatae ad, doloribus tempora quae ab nulla minus temporibus at veritatis!
-                     </p>
-                     <p>
-                         <strong>A list if you need it:</strong>
-                      </p>
-                     <ul>
-                        <li>
-                            <img aria-hidden="true" loading="lazy" decoding="async" src="/images/check.svg" alt="check mark" width="20" height="20">
-                            <span>List item about something</span>
-                        </li>
-                        <li>
-                            <img aria-hidden="true" loading="lazy" decoding="async" src="/images/check.svg" alt="check mark" width="20" height="20">
-                            <span>List item about something</span>
-                        </li>
-                        <li>
-                            <img aria-hidden="true" loading="lazy" decoding="async" src="/images/check.svg" alt="check mark" width="20" height="20">
-                            <span>List item about something</span>
-                        </li>
-                        <li>
-                            <img aria-hidden="true" loading="lazy" decoding="async" src="/images/check.svg" alt="check mark" width="20" height="20">
-                            <span>List item about something</span>
-                        </li>
-                        <li>
-                            <img aria-hidden="true" loading="lazy" decoding="async" src="/images/check.svg" alt="check mark" width="20" height="20">
-                            <span>List item about something</span>
-                        </li>
-                    </ul>
-                     <p>
-                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium saepe laborum nam consequuntur porro inventore odio? Quod autem alias ratione cum reiciendis qui quaerat, sequi voluptatum voluptatibus, iusto itaque sed ullam. Quis, maiores corrupti. Rerum quo laudantium vero magnam tempora!
-                     </p>
-                     <a class="button-solid" href="/contact.html">Get Free Quote</a>
-                </div>
-                <picture class="image-box">
-                     <source media="(max-width: 600px)" srcset="/images/cabinets2-m.jpg">
-                     <source media="(min-width: 601px)" srcset="/images/cabinets2.jpg">
-                     <img aria-hidden="true" loading="lazy" decoding="async" src="/images/cabinets2.jpg" alt="cabinets" width="400" height="662">
-                 </picture>
-            </div>
-       </section>
+<section id="gallery-973">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Our Portfolio</span>
+            <h2 class="cs-title">Some Memorable Shots from our Gallery</h2>
+            <p class="cs-text">
+                We take pride in our work and we love to show it off. Here are some of our favorite cuts and styles from our gallery.
+            </p>
+        </div>
+        <div class="cs-gallery">
+            <!--Picture 1-->
+            <picture class="cs-image">
+                <source media="(max-width: 600px)" src="/galleryimg/good white guy.webp">
+                <source media="(min-width: 601px)" src="/galleryimg/good white guy.webp">
+                <img loading="lazy" decoding="async" src="/galleryimg/good white guy.webp" alt="gallery" width="305" height="400">
+            </picture>
+            <!--Picture 2-->
+            <picture class="cs-image">
+                <source media="(max-width: 600px)" src="/galleryimg/happy kid.webp">
+                <source media="(min-width: 601px)" src="/galleryimg/happy kid.webp">
+                <img loading="lazy" decoding="async" src="/galleryimg/happy kid.webp" alt="gallery" width="305" height="400">
+            </picture>
+            <!--Picture 3-->
+            <picture class="cs-image">
+                <source media="(max-width: 600px)" src="galleryimg/nice.webp">
+                <source media="(min-width: 601px)" src="galleryimg/nice.webp">
+                <img loading="lazy" decoding="async" src="galleryimg/nice.webp" alt="gallery" width="305" height="400">
+            </picture>
+            <!--Picture 4-->
+            <picture class="cs-image">
+                <source media="(max-width: 600px)" src="galleryimg/owner.webp">
+                <source media="(min-width: 601px)" src="galleryimg/owner.webp">
+                <img loading="lazy" decoding="async" src="galleryimg/owner.webp" alt="gallery" width="305" height="400">
+            </picture>
+            <!--Picture 5-->
+            <picture class="cs-image">
+                <source media="(max-width: 600px)" src="galleryimg/happy customer.webp">
+                <source media="(min-width: 601px)" src="galleryimg/happy customer.webp">
+                <img loading="lazy" decoding="async" src="galleryimg/happy customer.webp" alt="gallery" width="305" height="400">
+            </picture>
+            <!--Picture 6-->
+            <picture class="cs-image">
+                <source media="(max-width: 600px)" src="galleryimg/top gallery.webp">
+                <source media="(min-width: 601px)" src="galleryimg/top gallery.webp">
+                <img loading="lazy" decoding="async" src="galleryimg/top gallery.webp" alt="gallery" width="305" height="400">
+            </picture>
+            <!--Picture 7-->
+            <picture class="cs-image">
+                <source media="(max-width: 600px)" src="galleryimg/white guy.webp">
+                <source media="(min-width: 601px)" src="galleryimg/white guy.webp">
+                <img loading="lazy" decoding="async" src="galleryimg/white guy.webp" alt="gallery" width="305" height="400">
+            </picture>
+            <!--Picture 8-->
+            <picture class="cs-image">
+                <source media="(max-width: 600px)" src="galleryimg/nice beard.webp">
+                <source media="(min-width: 601px)" src="galleryimg/nice beard.webp">
+                <img loading="lazy" decoding="async" src="galleryimg/nice beard.webp" alt="gallery" width="305" height="400">
+            </picture>
+        </div>
+    </div>
+    
+</section>
+
+
+                                
+        
+        <!-- ============================================ -->
+<!--                  Pricing                     -->
+<!-- ============================================ -->
+
+<section id="pricing-975">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Pricing</span>
+            <h2 class="cs-title">All Hair Services</h2>
+        </div>
+        <div class="cs-menu">
+            <!--Left Menu-->
+            <ul class="cs-menu-group">
+                <li class="cs-menu-item">
+                    <h3 class="cs-h3">
+                        <span class="cs-header">Regular Haircut / Corte de Cabello</span>
+                        <span class="cs-price">$35</span>
+                    </h3>
+                    <p class="cs-menu-text">
+                        Best known for our fades. Whether you’re looking for a tapered design or a fade haircut, back drop fade, skin fade, blow out's , flat tops. Our barbers have all the skills and tools.  
+                    </p>
+                    
+                </li>
+                <li class="cs-menu-item">
+                    <h3 class="cs-h3">
+                        <span class="cs-header">Eye Brow Wax / Alineado de Ceja con Wax</span>
+                        <span class="cs-price">$15</span>
+                    </h3>
+                    <p class="cs-menu-text">
+                        A great way to get your eyebrows on point. We use wax to shape your eyebrows and make them look clean and sharp.
+                    </p>
+                </li>
+                <li class="cs-menu-item">
+                    <h3 class="cs-h3">
+                        <span class="cs-header">Straight Razor Shave & Beard Tint / Tinte Para Barba y Alineado</span>
+                        <span class="cs-price">$75</span>
+                    </h3>
+                    <p class="cs-menu-text">
+                        Classic straight razor shave with hot towel and beard tint. We use a straight razor to give you a clean shave with hot towel to open up your pores. We also offer a tasteful tint to give your beard a fuller look.
+                    </p>
+                </li>
+                <li class="cs-menu-item">
+                    <h3 class="cs-h3">
+                        <span class="cs-header">Hair Cut & Beard Service / Corte de Cabello con Barba</span>
+                        <span class="cs-price">$65</span>
+                    </h3>
+                    <p class="cs-menu-text">
+                        Standard fare haircut with beard service. We offer a variety of beard services including trim, line up, and beard shaping. Fade out!
+                    </p>
+                </li>
+                <li class="cs-menu-item">
+                    <h3 class="cs-h3">
+                        <span class="cs-header">Hair Design Art & HairCut / Corte de Cabello con Diseño</span>
+                        <span class="cs-price">$55</span>
+                    </h3>
+                    <p class="cs-menu-text">
+                        This includes our specialty "hair tattoo" service. Popular patterns can be found in our gallery. We also offer custom designs; bring in a picture and we'll make it happen.
+                    </p>
+                </li>
+                
+            </ul>
+            <!--Right Menu-->
+            <ul class="cs-menu-group">
+                <li class="cs-menu-item">
+                    <h3 class="cs-h3">
+                        <span class="cs-header">Eye Brows With Razor / Alineado de Ceja con Navaja</span>
+                        <span class="cs-price">$7</span>
+                    </h3>
+                    <p class="cs-menu-text">
+                        A quick and professional eyebrow lineup completed with a straight razor.
+                    </p>
+                </li>
+                <li class="cs-menu-item">
+                    <h3 class="cs-h3">
+                        <span class="cs-header">Post Shave Mask / Mascarilla Después del Afeitado</span>
+                        <span class="cs-price">$30</span>
+                    </h3>
+                    <p class="cs-menu-text">
+                        An exfoliating face mask for smoother, healthier looking skin after your shave. It makes a big difference!
+                    </p>
+                </li>
+                <li class="cs-menu-item">
+                    <h3 class="cs-h3">
+                        <span class="cs-header">Hydrating & Cleansing Facial</span>
+                        <span class="cs-price">$70</span>
+                    </h3>
+                    <p class="cs-menu-text">
+                        For ultimate skin rejuvenation. Enjoy a thorough cleanse, followed by a tailored hydrating mask, leaving your skin refreshed and glowing. 
+                    </p>
+                </li>
+                <li class="cs-menu-item">
+                    <h3 class="cs-h3">
+                        <span class="cs-header">Hair Cuts For Men (Extra Long) / Corte de Pelo Largo Para Hombres</span>
+                        <span class="cs-price">$45</span>
+                    </h3>
+                    <p class="cs-menu-text">
+                        Long-haired cuts, tailored to your desired look. Step into sophistication and leave with a refined appearance that showcases your unique personality.
+                    </p>
+                </li>
+                <li class="cs-menu-item">
+                    <h3 class="cs-h3">
+                        <span class="cs-header">Straight-razor Shave / Razurado de Barba con Navaja</span>
+                        <span class="cs-price">$30</span>
+                    </h3>
+                    <p class="cs-menu-text">
+                        Careful shave and grooming service for your beard, resulting in a clean and polished look.
+                    </p>
+                </li>
+                <li class="cs-menu-item">
+                    <h3 class="cs-h3">
+                        <span class="cs-header">Wash & Style / Lavado y Cepillado</span>
+                        <span class="cs-price">$75+</span>
+                    </h3>
+                    <p class="cs-menu-text">
+                       Shampoo, conditioner, as well as a hydrating hair mask and styling.
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+                    
 
         <!-- ============================================ -->
         <!--             Final Call to Action             -->
@@ -260,16 +448,16 @@
 
         <section id="cta">
             <div class="container">
-                <h2 class="title">Get It Done <br> With Us Today</h2>
+                <h2 class="title">Experience<br> the Best in Barbering</h2>
                 <p>
-                    Say something catchy, informative, and encouraging to click the button to go to the contact page.  I like to add these to the bottom of all pages.
+                    We've loved serving the Big Lake area and hope to continue to do so for years to come. We're always looking for new clients and would love to have you join the El Teca family. Come in and see what we're all about!
                 </p>
-                <a href="/contact.html" class="button-solid">Get an Estimate Now</a>
+                <a href="https://square.site/book/1XVETMPTDETR9/el-teca-barbershop-big-lake-mn" class="button-solid">Book an Appointment</a>
             </div>
             <picture>
-                <source media="(max-width: 600px)" srcset="/images/cabinets2-m.webp">
-                <source media="(min-width: 601px)" srcset="/images/cabinets2.jpg">
-                <img aria-hidden="true" loading="lazy" decoding="async" src="/images/cabinets2.jpg" alt="kitchen cabinets" width="1920" height="1280">
+                <source media="(max-width: 600px)" src="/newimg/shop.jpeg">
+                <source media="(min-width: 601px)" src="/newimg/large b&w logo.png">
+                <img aria-hidden="true" loading="lazy" decoding="async" src="/newimg/large b&w logo.png" alt="kitchen cabinets" width="1920" height="1280">
              </picture>
         </section>
     </main>
@@ -281,33 +469,29 @@
     <footer id="footer">
         <div class="container">
             <div class="left-section">
-                <a class="logo" href="/index.html"><img loading="lazy" decoding="async" src="/images/logo-light.png" alt="logo" width="264" height="78"></a>
-                <p>
-                    Extra content if you need it, if not you can delete this whole p tag. I usually do.
-                </p>
+                <a class="logo" href="/index.html"><img loading="lazy" decoding="async" src="/newimg/teca-logo-white.png" alt="logo" width="264" height="78"></a>
+                
             </div>
             <div class="right-section">
                 <div class="lists">
                     <ul>
                         <li><h2>Information</h2></li>
                         <li><a href="/index.html">Home</a></li>
-                        <li><a href="/about.html">About Us</a></li>
-                        <li><a href="/projects.html">Projects</a></li>
-                        <li><a href="/testimonials.html">Reviews</a></li>
-                        <li><a href="/contact.html">Contact</a></li>
+                        <li><a >About Us</a></li>
+                        <!-- href="/about.html" -->
+                        <li><a >Projects</a></li>
+                        <!-- href="/projects.html" -->
+                        <li><a >Reviews</a></li>
+                        <!-- href="/testimonials.html" -->
+                        <li><a >Contact</a></li>
+                        <!-- href="/contact.html" -->
                     </ul>
-                    <ul>
-                        <li><h2>Services</h2></li>
-                        <li>Service1</li>
-                        <li>Service2</li>
-                        <li>Service4</li>
-                        <li>Service5</li>
-                    </ul>
+                    
                     <ul>
                         <li><h2>Contact</h2></li>
-                        <li><a href="/contact.html">First Address Line<br>Denver CO 80206</a></li>
-                        <li><a href="tel:555-779-4407">T: (555) 779-4407</a></li>
-                        <li><a href="mailto:email@email.com">Click to Email</a></li>
+                        <li><a href="/contact.html">171 Lake St N<br> Big Lake, MN 55309</a></li>
+                        <li><a href="tel:555-779-4407">T: (763) 207-8822</a></li>
+                        <li><a href="eltecabarbershop@gmail.com">Click to Email</a></li>
                     </ul>
                 </div>
             </div>
@@ -315,8 +499,8 @@
 
         <div class="credit">
             <span>Designed and Hand Coded by</span>
-            <a href="" target="_blank" rel="noopener">Your Company Name</a>
-            <span class="copyright"> Copyright 2021 - Present</span></div>
+            <a href="" target="_blank" rel="noopener">Benben Atlas Webdesigns</a>
+            <span class="copyright"> Copyright 2023 - Present</span></div>
     </footer>
 
 
