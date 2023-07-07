@@ -30,7 +30,8 @@
         position: relative;
         width: 100vw; /* set width to 100% of viewport width */
         height: 100vh; /* set height to 100% of viewport height */
-        overflow: auto; /* add overflow auto to handle content larger than viewport */
+        
+        overflow:hidden;
       }
       
     #hero-929 .cs-container {
@@ -45,6 +46,7 @@
       /* 48px - 64px */
       gap: clamp(3rem, 6vw, 4rem);
       position: relative;
+      overflow:hidden;
     }
     #hero-929 .cs-content {
       /* set text align to left if content needs to be left aligned */
@@ -54,6 +56,8 @@
       flex-direction: column;
       /* centers content horizontally, set to flex-start to left align */
       align-items: center;
+      overflow:hidden;
+      
     }
     #hero-929 .cs-title {
       /* 39px - 61px */
@@ -180,7 +184,7 @@
       transform: rotate(-14.36deg) translateX(-6.25rem);
     }
     #hero-929 .cs-picture {
-    visibility: hidden;
+    
       width: 65%;
       height: auto;
       max-height: 37.375rem;
@@ -231,7 +235,7 @@
         margin-top: .6rem;
         /* margin-bottom: -20px */
         overflow:hidden;
-        height: 190px;
+        height: auto;
       }
   }
   /* Tablet - 768px */
