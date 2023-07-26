@@ -275,7 +275,10 @@
     }
     #hero-929 .cs-hours-group {
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
+      margin-right: 20px;
+      justify-content: center;
+      
     }
     #hero-929 .cs-header {
       max-width: 100%;
@@ -293,6 +296,7 @@
       /* 90px - 130px */
       top: 10.125;
     }
+   
   }
   /* Large Desktop 1300px */
   @media only screen and (min-width: 81.25rem) {
@@ -303,6 +307,7 @@
     }
     #hero-929 .cs-header {
       width: 100%;
+      text-align: center;
     }
     #hero-929 .cs-tagline {
       left: 27.625rem;
